@@ -1,0 +1,26 @@
+# View Profile #
+
+Get pictures uploaded by the user, grouped by date and location.
+
+Get count of items a user has rated.
+
+Get username.
+
+## Request ##
+
+**URL:** `http://example.com/users/profile`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** Yes  
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+>   -H 'Accept: application/json' \\  
+>   -X GET http://example.com/users/profile
+
+## Response ##
+
+**Format:** JSON  
+**Sample data:**
+
+> {"username":"wtn","ratings_count":3,"user_gallery":[{"date":"2011-06-03","pictures_by_restaurant":[{"restaurant_id":55,"restaurant_name":"Blackbird","pictures":[{"640px":"http://s3.amazonaws.com/menu-pictures-production/attachments/2/640px.jpg?1307130703","320px":"http://s3.amazonaws.com/menu-pictures-production/attachments/2/320px.jpg?1307130703","300px":"http://s3.amazonaws.com/menu-pictures-production/attachments/2/300px.jpg?1307130703","160px":"http://s3.amazonaws.com/menu-pictures-production/attachments/2/160px.jpg?1307130703","80px":"http://s3.amazonaws.com/menu-pictures-production/attachments/2/80px.jpg?1307130703","id":2,"restaurant_id":55,"username":"wtn","restaurant_name":"Blackbird","menu_item_name":null,"caption":"It's all been said before about this place."}]}]},{"date":"2011-06-09","pictures_by_restaurant":[{"restaurant_id":116,"restaurant_name":"Nhu Lan","pictures":[{"640px":"http://s3.amazonaws.com/menu-pictures-production/attachments/30/640px.jpg?1307663650","320px":"http://s3.amazonaws.com/menu-pictures-production/attachments/30/320px.jpg?1307663650","300px":"http://s3.amazonaws.com/menu-pictures-production/attachments/30/300px.jpg?1307663650","160px":"http://s3.amazonaws.com/menu-pictures-production/attachments/30/160px.jpg?1307663650","80px":"http://s3.amazonaws.com/menu-pictures-production/attachments/30/80px.jpg?1307663650","id":30,"restaurant_id":116,"username":"wtn","restaurant_name":"Nhu Lan","menu_item_name":"Sugarcane Shrimp","caption":"Silky smooth crustaceans."}]}]}]}

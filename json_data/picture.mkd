@@ -1,0 +1,13 @@
+# Picture #
+
+## Attributes ##
+`80px`—URL string  
+`160px`—URL string  
+`300px`—URL string  
+`restaurant_name`—string, may be null  
+`menu_item_name`—string, may be null  
+`caption`—string, may be null; this parameter will only be present for photos in the user's profile.
+
+**Sample Data:**  
+
+> {"restaurant_name: "Paprika", "menu_item_name": "Navratan Korma", "caption": "my tasty roast bunny!!!\u2661\u2661\u2661", "80px": "http://s3.amazonaws.com/menu-pictures-production/attachments/4da88ce788a847154a00000c/80px.jpg?1302891751", "160px": "http://s3.amazonaws.com/menu-pictures-production/attachments/4da88ce788a847154a00000c/160px.jpg?1302891751", "300px": "http://s3.amazonaws.com/menu-pictures-production/attachments/4da88ce788a847154a00000c/300px.jpg?1302891751"}

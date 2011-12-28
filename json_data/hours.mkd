@@ -1,0 +1,13 @@
+# Hours #
+
+An array of arrays.  
+Each day of the week is represented by one array. Index 0 is Sunday.  
+Day arrays contains zero or more timespans.  
+Timespans have an opening time and a closing time, designated as `open` and `close`.  
+Times have and hour and a minute, designated `h` and `m`. Midnight is at hour 0.  
+
+All times apply to the restaurant's local time zone.  
+
+**Sample Data:**
+
+> [[{"open":{"h":11,"m":30},"close":{"h":2,"m":0}},{"open":{"h":5,"m":30},"close":{"h":10,"m":30}}],[{"open":{"h":11,"m":30},"close":{"h":2,"m":0}},{"open":{"h":5,"m":30},"close":{"h":10,"m":30}}],[{"open":{"h":11,"m":30},"close":{"h":2,"m":0}},{"open":{"h":5,"m":30},"close":{"h":10,"m":30}}],[{"open":{"h":11,"m":30},"close":{"h":2,"m":0}},{"open":{"h":5,"m":30},"close":{"h":10,"m":30}}],[{"open":{"h":11,"m":30},"close":{"h":2,"m":0}},{"open":{"h":5,"m":30},"close":{"h":10,"m":30}}],[{"open":{"h":5,"m":30},"close":{"h":11,"m":30}}],[{"open":{"h":5,"m":30},"close":{"h":11,"m":30}}]]

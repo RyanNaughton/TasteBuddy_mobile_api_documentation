@@ -1,0 +1,86 @@
+# Tags #
+## List of available tags ##
+
+### Request ###
+
+**URL:** `http://example.com/tags`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** No  
+
+### Response ###
+
+**Format:** JSON
+
+**Sample data:**
+> ["aged","aromatic","authentic","baked","bite-size","bitter","bland","blazed","boiled","braised","browned","burnt","buttery","caked","candied","caramelized","char-broiled","cheesy","chilled","chocolaty","chunky","cinnamon","classic","cold","colorful","corn-fed","crafted","creamy","crisp","crumbly","crunchy","cured","decadent","delectable","delicate","delicious","delightful","distinctive","doughy","drizzled","dry","dull","encrusted","epicurean","ethnic","exotic","exquisite","extraordinary","festive","filleted","finger-food","fizzy","flaky","flavorful","fleshy","fluffy","fragile","fresh","fried","frosty","fruity","full-bodied","furry","garlicky","generous","gingery","glazed","golden","gooey","gourmet","greasy","grilled","gritty","heaping","hearty","heavenly","homemade","infused","intense","intriguing","juicy","julienne","jumbo","lavish","layered","lean","leathery","lemony","light","loaded","luscious","marinated","mashed","meaty","messy","mild","minty","mixed","moist","mushy","nutmeg","nutritious","nutty","oily","open-faced","organic","palatable","peppery","perfection","petite","pickled","piquant","plump","poached","popular","pounded","prepared","prickly","procen\u00e7al","pulpy","pungent","pur\u00e9ed","rancid","reduced","refreshing","rich","ripe","roasted","rosemary","rubbery","saffron","salty","satiny","saut\u00e9ed","savory","scrumptious","sea","seared","seasoned","sharp","silky","simmered","sizzling","skillfully","slow-cooked","small","smoky","smooth","smothered","soothing","sour","southern","special","spicy","spongy","sprinkled","steamed","steaming","sticky","strong","stuffed","succulent","sugary","superb","sweet","sweet-and-sour","syrupy","tangy","tantalizing","tart","tasteful","tasteless","tasty","tempting","tender","tepid","terrific","thick","thin","thyme","wet","toasted","topped","tossed","tough","traditional","unflavored","unseasoned","vanilla","velvety","vinegary","warm","waxy","whipped","whole","wild","wonderful","woody","yummy","zesty","zippy"]
+
+## Set tags for specific item ##
+
+May be applied to `restaurant` and `menu_item` resources.
+
+### Request ###
+
+**URL:** `http://example.com/restaurant/id/tag`  
+**Format:** JSON  
+**Method:** PUT  
+**Requires Authentication:** Yes  
+**Parameters:**  
+  `value`—string  
+  example value: `salty`
+
+**Sample data**
+
+> {"value": "salty"}
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+> -H 'Accept: application/json' \\  
+> -X PUT http://example.com/restaurants/4dbe677788a847df48000001/tag \\  
+> -d '{"value": "salty"}'
+
+### Response ###
+
+**Parameters:**  
+  `user_tags`—tags the user has applied to this item; array of strings  
+  `tags`—object with tags as keys and counts as values  
+
+**Sample data:**
+
+> {"user_tags": ["blazed","browned","burnt"], "tags": {"blazed": 1, "browned": 2, "burnt": 1, "golden": 2}}
+
+## Delete tags for specific item ##
+
+May be applied to `restaurant` and `menu_item` resources.
+
+### Request ###
+
+**URL:** `http://example.com/restaurant/id/tag`  
+**Format:** JSON  
+**Method:** DELETE  
+**Requires Authentication:** Yes  
+**Parameters:**  
+  `value`—string  
+  example value: `burnt`
+
+**Sample data**
+
+> {"value": "burnt"}
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+> -H 'Accept: application/json' \\  
+> -X DELETE http://example.com/restaurants/4dbe677788a847df48000001/tag \\  
+> -d '{"value": "burnt"}'
+
+### Response ###
+
+**Parameters:**  
+  `user_tags`—tags the user has applied to this item; array of strings  
+  `tags`—object with tags as keys and counts as values  
+
+**Sample data:**
+
+> {"user_tags": ["blazed","browned"], "tags": {"blazed": 1, "browned": 2, "golden": 2}}

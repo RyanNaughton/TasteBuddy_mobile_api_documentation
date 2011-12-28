@@ -1,0 +1,87 @@
+# User Account Creation #
+
+## Request ##
+
+**URL:** `http://example.com/users`  
+**Format:** JSON  
+**Method:** POST  
+**Requires Authentication:** No  
+**Parameters:**  
+  `user`—see [user documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/user.mkd)
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+> -H 'Accept: application/json' \\  
+> -X POST http://localhost:3000/users \\  
+> -d '{"user": { "username": "cb", "first_name": "Craig", "last_name": "biggio", "password": "st7ship", "password_confirmation": "st7ship", "country": "United States", "postal_code": "77054", "email": "cb@astros.com", "birthday": "1965-12-14"}}'
+
+
+## Response ##
+
+### Sample Data ###
+
+**Success**
+
+> {"authentication_token": "i4Swi9ZRYGOIdSigi9zq", "birthday": "1965-12-14T00:00:00Z", "country": "United States", "email": "cb@astros.com", "first_name": "Craig", "last_name": "biggio", "postal_code": "77054", "username": "cb"}
+
+**Failure**
+
+> {"email": ["is already taken"], "username": ["is already taken"]}
+
+# User Account Update #
+
+If `current_password` is included, it must match the user's current_password.
+
+For updates, `password` and `password_confirmation` are optional. If `password_confirmation` is included, `password` must be present and must match `password_confirmation`.
+
+## Request ##
+
+**URL:** `http://example.com/users/update`  
+**Format:** JSON  
+**Method:** PUT  
+**Requires Authentication:** Yes  
+**Parameters:**  
+  `user`—see [user documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/user.mkd)
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+> -H 'Accept: application/json' \\  
+> -X PUT http://localhost:3000/users \\  
+> -d '{"user": { "username": "cb", "first_name": "Craig", "last_name": "biggio", "password": "st7ship", "password_confirmation": "st7ship", "country": "United States", "postal_code": "77054", "email": "cb@astros.com", "birthday": "1965-12-14"}}'
+
+
+## Response ##
+
+### Sample Data ###
+
+**Success**
+
+> {"authentication_token": "i4Swi9ZRYGOIdSigi9zq", "birthday": "1965-12-14T00:00:00Z", "country": "United States", "email": "cb@astros.com", "first_name": "Craig", "last_name": "biggio", "postal_code": "77054", "username": "cb"}
+
+**Failure**
+
+> {"email": ["is already taken", "username": ["is already taken"]}
+
+# User Account Attributes #
+
+## Request ##
+
+**URL:** `http://example.com/users/edit`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** Yes  
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+> -H 'Accept: application/json' \\  
+> -X GET http://localhost:3000/users/attributes \\  
+> -d '{"auth_token": "i4Swi9ZRYGOIdSigi9zq"}'
+
+## Response ##
+
+### Sample Data ###
+
+> {"authentication_token": "i4Swi9ZRYGOIdSigi9zq", "birthday": "1965-12-14T00:00:00Z", "country": "United States", "email": "cb@astros.com", "first_name": "Craig", "last_name": "biggio", "postal_code": "77054", "username": "cb", "gender": "m"}

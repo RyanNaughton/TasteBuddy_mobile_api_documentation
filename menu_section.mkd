@@ -1,0 +1,18 @@
+# Menu Section #
+
+Get a section of a restaurant's menu data.  
+The `index` in the URL originates from the position of the desired section in the `menu_metadata` array. See the documentation for  [restaurants](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/restaurant.mkd).
+
+## Request ##
+
+**URL:** `http://example.com/restaurant/id/menu_section/index`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** No  
+
+## Response ##
+
+**Format:** JSON
+
+**Sample data:**
+See [menu section](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/menu_section.mkd)  

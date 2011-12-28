@@ -1,0 +1,25 @@
+# Festivals #
+
+## Request ##
+
+**URL:** `http://example.com/festivals`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** Optional  
+
+**Parameters:**  
+  `coordinates`—current user latitude and longitude as a two-element array of numbers (optional)  
+  example value: `[41.9128990173, -87.6483001709]`
+
+  `latitude`—current user latitude (optional, required if longitude is present)  
+  example value: `41.9128990173`
+
+  `longitude`—current user longitude (optional, required if latitude is present)  
+  example value: `-87.6483001709`
+
+## Response ##
+
+**Format:** JSON
+
+**Sample data:**
+See [festivals documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/festival.mkd)  

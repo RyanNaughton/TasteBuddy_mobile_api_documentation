@@ -1,0 +1,34 @@
+# Rating #
+Method for commenting on restaurants, menu items, and pictures. Append `/comment` to the locator of the resource to be commented upon.
+
+## Request ##
+
+**URL:** `http://example.com/restaurant/id/comment`  
+**Format:** JSON  
+**Method:** PUT  
+**Requires Authentication:** Yes  
+**Parameters:**  
+  `text`—string, 2-140 characters  
+  example value: `These cornflakes are soggy!`
+
+**Sample data:**
+
+> {"text": "These cornflakes are soggy!"}
+
+## Response ##
+
+### Success ###
+
+**Format:** JSON  
+**Status Code:** 201  
+**Sample data:**
+
+> {"status": "created"}
+
+### Failure ###
+
+**Format:** JSON  
+**Status Code:** 422  
+**Sample data:**
+
+> {"status": "unprocessable_entry"}

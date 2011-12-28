@@ -1,0 +1,20 @@
+# Festival #
+
+## Attributes ##
+
+`id`—integer  
+`name`—string  
+`address_description`—string, may be `null`  
+`address_1`—string, may be `null`  
+`city_town`—string, may be `null`  
+`state_province`—string, may be `null`  
+`postal_code`—string, may be `null`  
+`website_url`—string, may be `null`  
+`start_date`—string in format YYYY-MM-DD  
+`end_date`—string in format YYYY-MM-DD  
+`latitude`—number  
+`longitude`—number
+
+**Sample Data:**
+
+> {"address_1": "337 E Randolph St", "address_description": "Grant Park", "city_town": "Chicago", "end_date": "2011-07-04", "id": 1, "latitude": 41.24, "longitude": -87.65, "name": "Taste of Chicago", "postal_code": "60601", "start_date": "2011-06-24", "state_province": "IL", "website_url": "http://www.explorechicago.org/city/en/supporting_narrative/events___special_events/special_events/park_district/Taste_of_Chicago.html"}

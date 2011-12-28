@@ -1,0 +1,65 @@
+# View Bookmarks #
+Get the user's bookmarks. The bookmarked items are returned as JSON objects grouped by type.
+
+## Request ##
+
+**URL:** `http://example.com/users/bookmarks`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** Yes  
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+>   -H 'Accept: application/json' \\  
+>   -X GET http://example.com/users/bookmarks
+
+## Response ##
+
+**Format:** JSON  
+**Sample data:**
+
+> {"restaurants": [{"id": "4dae765288a847162300001b", "name": "Boka"}]}
+
+# Add Bookmark #
+Method for bookmarking restaurants or menu items. Append /bookmark to the locator of the resource to be rated.
+
+## Request ##
+
+**URL:** `http://example.com/restaurant/id/bookmark`  
+**Format:** JSON  
+**Method:** PUT  
+**Requires Authentication:** Yes  
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+>   -H 'Accept: application/json' \\  
+>   -X PUT http://example.com/restaurants/4dbe677788a847df48000001/bookmark
+
+## Response ##
+
+**Format:** JSON  
+**Sample data:**
+
+> {"status": "success"}
+
+# Remove Bookmark #
+Remove a bookmark.
+
+## Request ##
+
+**URL:** `http://example.com/restaurant/id/bookmark`  
+**Format:** JSON  
+**Method:** DELETE  
+**Requires Authentication:** Yes  
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+>   -H 'Accept: application/json' \\  
+>   -X DELETE http://example.com/restaurants/4dbe677788a847df48000001/bookmark
+
+## Response ##
+
+**Format:** JSON  
+**Sample data:**
+
+> {"status": "success"}

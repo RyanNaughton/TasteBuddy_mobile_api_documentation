@@ -1,0 +1,28 @@
+# Picture Upload #
+
+## Request ##
+
+**URL:** `http://example.com/pictures/`  
+**Content-Type:** multipart/form-data  
+**Accept:** application/json  
+**Method:** POST  
+**Requires Authentication:** Yes  
+**Parameters:**  
+  `picture[attachment]`—binary encoded image file data  
+  `picture[caption]`—string with minimum 0 and maximum 140 characters  
+  `picture[restaurant_id]`—string  
+  `picture[menu_item_id]`—string (optional)  
+
+Restaurant pictures that do not reference a specific item are not required to include a `menu_item_id``.
+
+## Response ##
+
+**Success**  
+The response contains the object:
+
+> {"id": "4db983e888a8478cd100002b", "80px": "(URL)", "160px": "(URL)", "300px": "(URL)"}
+
+**Failure**  
+The response contains the errors:
+
+> {"caption": ["is too long (maximum is 140 characters)"]}

@@ -1,0 +1,45 @@
+# Search query #
+
+## Request ##
+
+**URL:** `http://example.com/search`  
+**Format:** JSON  
+**Method:** POST  
+**Requires Authentication:** Optional  
+**Parameters:**  
+  `find`—string of search text (required, may be empty string)  
+  example value: `boka chicken`  
+
+  `near`—string of location text (required, may be empty string)  
+  example value: `1729 n halsted st chicago`
+
+  `coordinates`—current user latitude and longitude as a two-element array of numbers (required)  
+  example value: `[41.9128990173, -87.6483001709]`
+
+  `page`—(whole) number describing the set of results to get (optional, defaults to `1` on server)  
+  example value: `2`
+
+  `festival_id`—number identifying the festival to scope the current search by  
+  example value: `4`
+
+**Sample data:**
+
+> {"find": "boka lamb", "near": "halsted at belmont, chicago", "coordinates": [41.9128990173, -87.6483001709]}
+
+
+## Response ##
+
+**Format:** JSON
+
+List of restaurants.  
+Menu items are included in each restaurant object as a list called `menu_items`. This list may be empty.  
+Distances are included in each restaurant object as the `distance` attribute, a JSON number rounded to the nearest hundredth.  
+
+Authenticated requests will return ratings, tags, and bookmark information for the current user.
+
+See [restaurant documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/restaurant.mkd)  
+See [menu item documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/menu_item.mkd)  
+
+**Sample data:**  
+
+> [{"address_1": "2024 N Halsted St", "alcohol_type": "Full Bar", "city_town": "Chicago", "country": "US", "credit_cards": true,"cuisine_types": ["Spanish"], "delivery": false,"dress_code": "casual", "group_friendly": true,"kid_friendly": false,"location": [41.91902,-87.648572], "name": "Cafe Ba-Ba-Reeba", "nearest_transit": "Armitage (Purple Express, Brown)", "neighborhood": "Lincoln Park, DePaul", "outdoor_seating": true,"parking": "Street", "phone": "(773) 935-5000", "postal_code": "60614", "reservations": true,"state_province": "IL", "takeout": true,"website_url": "http: //www.cafebabareeba.com", "wheelchair_access": true,"id": 1, "average_rating": null, "pictures": [], "comments": [], "menu_items": [{"name": "Chorizo Wrapped Medjool Date & Cheese", "restaurant_id": 22, "id": 2, "average_rating": null, "pictures": [], "comments": [], "tags": []},{"name": "Ahi Tuna Poached In Olive Oil On Avocado Toast", "restaurant_id": 24, "id": 3, "average_rating": null, "pictures": [], "comments": [], "tags": []},{"name": "Goat Cheese Croqueta", "restaurant_id": 25, "id": 4, "average_rating": null, "pictures": [], "comments": [], "tags": []},{"name": "Short Rib Stuffed Piquillo Pepper", "restaurant_id": 27, "id": 5, "average_rating": null, "pictures": [], "comments": [], "tags": []},{"name": "Spanish Artisanal Cheese & Quince", "restaurant_id": 28, "id": 6, "average_rating": null, "pictures": [], "comments": [], "tags": []}]},{"address_1": "702 W Fulton St", "address_2": "(between Union Ave & I-90)", "alcohol_type": "Full Bar", "city_town": "Chicago", "country": "US", "credit_cards": true,"cuisine_types": ["Latin American"], "delivery": false,"dress_code": "business", "group_friendly": true,"kid_friendly": false,"location": [41.887142,-87.646054], "name": "Carnivale", "nearest_transit": "Clinton (Pink, Green)\n\t\t\t\t\t\t\t\t\t\tGrand (Blue O'Hare)", "neighborhood": "Near West Side, West Loop", "outdoor_seating": true,"parking": "Street, Valet", "phone": "(312) 850-5005", "postal_code": "60661", "reservations": true,"state_province": "IL", "takeout": true,"website_url": "http: //www.carnivalechicago.com", "wheelchair_access": true,"id": 29, "average_rating": null, "pictures": [], "comments": [], "menu_items": [{"name": "Camarones Ceviche", "restaurant_id": 30, "id": 31, "average_rating": null, "pictures": [], "comments": [], "tags": []}]}]

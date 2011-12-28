@@ -1,0 +1,9 @@
+# Menu Section #
+
+A menu section represents a top level (primary) segment of a menu. It consists of an array of menu subsections. See also [menu subsection documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/menu_subsection.mkd).
+
+The header value for a menu section is not included in the object—it must be taken from the restaurant's `menu_metadata` array.
+
+**Sample Data:**
+
+> [{"name":"Soups And Salads","items":[{"name":"Heart\u2019s Delight Salad","pictures":[{"id":276,"80px":"http://s3.amazonaws.com/menu-pictures-production/attachments/4dacce7a9a16853370000019/80px.jpg?1303170679","160px":"http://s3.amazonaws.com/menu-pictures-production/attachments/4dacce7a9a16853370000019/160px.jpg?1303170679","300px":"http://s3.amazonaws.com/menu-pictures-production/attachments/4dacce7a9a16853370000019/300px.jpg?1303170679"}],"id":"4dae942a9a16857e8d000df3","average_rating":null,"ratings_count":0,"comments":[],"tags":[]},{"name":"Broiled Salmon Salad","pictures":[{"id":1353,"80px":"http://s3.amazonaws.com/menu-pictures-production/attachments/4dacce7a9a16853370000019/80px.jpg?1303170679","160px":"http://s3.amazonaws.com/menu-pictures-production/attachments/4dacce7a9a16853370000019/160px.jpg?1303170679","300px":"http://s3.amazonaws.com/menu-pictures-production/attachments/4dacce7a9a16853370000019/300px.jpg?1303170679"}],"id":"4dae942a9a16857e8d000df4","average_rating":null,"ratings_count":0,"comments":[],"tags":[]}]}]

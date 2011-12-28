@@ -1,0 +1,40 @@
+# Search Autocomplete #
+
+## Request ##
+
+**URL:** `http://example.com/complete`  
+**Format:** JSON  
+**Method:** POST  
+**Requires Authentication:** No  
+**Parameters:**  
+  `find`—string of search text (optional)  
+  example value: `quac`  
+
+  `near`—string of location text (optional)  
+  example value: `1729 n halsted st chicago`
+
+  `coordinates`—current user latitude and longitude as a two-element array of numbers (optional)  
+  example value: `[41.9128990173, -87.6483001709]`
+
+**Sample data:**
+
+> {"find": "duc", "near": "halsted at belmont, chicago", "coordinates": [41.9128990173, -87.6483001709]}
+
+
+## Response ##
+
+**Format:** JSON
+
+**Parameters:**  
+  `restaurants`—list of strings  
+  example value: `["Freddie Mercury Restaurant"]`  
+
+  `menu_items`—array of strings  
+  example value: `["Grilled Squid with Lentil and Mint Salad", "Tuna Fish Sandwich"]`
+
+  `neighborhoods`—array of strings  
+  example value: `["Humbolt Park", "Wicker Park", "Garfield Park"]`
+
+**Sample data:**  
+
+> {"restaurants": ["The Duckmill"], "menu_items": ["Muscovy Duck Breast"], "neighborhoods": ["Ducktown"]}

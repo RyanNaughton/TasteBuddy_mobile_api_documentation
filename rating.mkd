@@ -1,0 +1,43 @@
+# Rating #
+Method for rating restaurants or menu items. Append /rate to the locator of the resource to be rated.
+
+## Request ##
+
+**URL:** `http://example.com/restaurants/id/rate`  
+**Format:** JSON  
+**Method:** PUT  
+**Requires Authentication:** Yes  
+**Parameters:**  
+  `value`—number from 1 to 5 in increments of 0.1  
+  example value: `2`
+
+**Sample data**
+
+> {"value": 4.0}
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+>   -H 'Accept: application/json' \\  
+>   -X PUT http://example.com/restaurants/4dbe677788a847df48000001/rate \\  
+>   -d '{"value": 5}'
+
+## Response ##
+
+**Format:** JSON
+
+**Parameters:**  
+  `average_rating`—number from 1 to 5 in increments of 0.1; the updated average rating value.  
+  example value: `3.1`
+
+### Sample Data ###
+
+**Success**
+
+> {"average_rating": 3.8}
+
+**Failure**
+
+Returns errors incurred while saving the object. If a non-permissible rating value is passed, a value for the `ratings` key will be present.
+
+> {"ratings": ["3.141 is not a permitted value"]}

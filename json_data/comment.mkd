@@ -1,0 +1,9 @@
+# Comment #
+
+## Attributes ##
+`username`—string, may be `null`  
+`text`—string  
+
+**Sample Data:**  
+
+> {"text": "My favorite cr\\u00EApe.", "user_id": 335, "username": "keith"}

@@ -1,0 +1,17 @@
+# Menu Item #
+
+## Request ##
+
+**URL:** `http://example.com/menu_item/id`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** Optional  
+
+## Response ##
+
+If the user is not authenticated, the response will not include the `user_rating` parameter.  
+
+**Format:** JSON
+
+**Sample data:**
+See [menu item documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/menu_item.mkd)  

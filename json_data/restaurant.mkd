@@ -1,0 +1,45 @@
+# Restaurant #
+
+## Attributes ##
+`id`—integer  
+`name`—string  
+`average_rating`—number from 1 to 5 in increments of 0.1, may be `null`  
+`ratings_count`—number  
+`average_meal_price`—number  
+`address_1`—string  
+`address_2`—string, may be `null`  
+`city_town`—string  
+`state_province`—string  
+`country`—string, may be `null`  
+`postal_code`—string, may be `null`  
+`neighborhood`—string, may be `null`  
+`location`—a two-element array with latitude and longitude, may be `null`  
+`phone`—string  
+`website_url`—string, may be `null`  
+`byob`—boolean, may be `null`  
+`alcohol_type`—string, may be `null`  
+`credit_cards`—boolean, may be `null`  
+`cuisine_types`—an array of strings  
+`delivery`—boolean, may be `null`  
+`dress_code`—string, may be `null`  
+`group_friendly`—boolean, may be `null`  
+`kid_friendly`—boolean, may be `null`  
+`nearest_transit`—string, may be `null`  
+`outdoor_seating`—boolean, may be `null`  
+`parking`—string, may be `null`  
+`reservations`—boolean, may be `null`  
+`takeout`—boolean, may be `null`  
+`wheelchair_access`—boolean, may be `null`  
+`pictures`—an array of picture objects; see [picture documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/picture.mkd)  
+`comments`—an array of comments; see [comment documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/comment.mkd)  
+`tags`—an object with tags as keys and tag counts as values  
+`hours`—an array of opening and closing times. May be null. See [hours documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/hours.mkd)  
+`bookmark`—boolean; present only for authenticated requests.  
+`user_tags`—an array of tags that the user has applied to this restaurant; present only for authenticated requests.  
+`user_rating`—number from 1 to 5 in increments of 0.1; may be `null`; present only for authenticated requests.  
+`distance—number, may be `null`  
+`menu_present`—boolean
+
+**Sample Data:**
+
+> {"address_1" :"1603 E 55th St", "address_2": null, "alcohol_type": "No", "city_town": "Chicago", "country": "US", "credit_cards" :true, "cuisine_types": ["Korean"], "delivery": false, "dress_code": "casual", "group_friendly": true, "kid_friendly": true, "location" :[41.7951749, -87.5871464], "name": "Seoul Corea", "nearest_transit" :null, "neighborhood": "Hyde Park", "outdoor_seating": false, "parking": "Street", "phone": "(773) 288-1795", "postal_code": "60615", "reservations": false, "state_province": "IL", "takeout": true, "website_url": null, "wheelchair_access": true, "id": 389, "average_rating": 4.1, "ratings_count": 8, "pictures": [], "comments": [], "tags": {"haughty": 1}, "average_meal_price": 14.5, "menu_present": true, "user_rating": 2, "hours": null}

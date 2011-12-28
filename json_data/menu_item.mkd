@@ -1,0 +1,19 @@
+# Menu Item #
+
+## Attributes ##
+`id`—integer  
+`name`—string  
+`price`—number  
+`average_rating`—number from 1 to 5 in increments of 0.1, may be `null`  
+`ratings_count`—number  
+`tags`—an object with tags as keys and tag counts as values  
+`pictures`—an array of picture objects; see [picture documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/picture.mkd)  
+`restaurant_id`—integer  
+`comments`—an array of comments; see [comment documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/comment.mkd)  
+`bookmark`—boolean; present only for authenticated requests.  
+`user_tags`—an array of tags that the user has applied to this menu item; present only for authenticated requests.  
+`user_rating`—number from 1 to 5 in increments of 0.1; may be `null`; present only for authenticated requests.
+
+**Sample Data:**
+
+> {"name": "Bruschetta Pomodoro", "restaurant_id": 17, "id": 490, "price": 11.99, "average_rating": null, "ratings_count": 0, "pictures": [], "comments": [], "tags": {"seedy": 1}, "user_rating": null, "bookmark": false, "user_tags": ["seedy"]}

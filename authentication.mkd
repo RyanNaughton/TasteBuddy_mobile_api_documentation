@@ -1,0 +1,38 @@
+# Authentication #
+Authentication is provided by the `TokenAuthenticatable` module in [Devise](https://github.com/plataformatec/devise).
+
+The client may pass the token as a URL encoded parameter `auth_token` or by passing the token as the username via HTTP basic authentication.
+
+## Token ##
+
+### Request ###
+
+**URL:** `http://example.com/users/sign_in`  
+**Format:** JSON  
+**Method:** POST  
+**Parameters:**  
+  `user`—JSON object with two keys, `login` and `password`  
+  example value: `{"login" : "cb", "password" : "st7ship"}`
+
+**Sample Data**
+
+> {"user" : { "login" : "cb", "password" : "st7ship"}}
+
+**curl**
+
+> curl -H 'Content-Type: application/json' \\  
+>   -H 'Accept: application/json' \\  
+>   -X POST http://localhost:3000/users/sign_in \\  
+>   -d '{"user": { "login": "cb", "password": "st7ship"}}'
+
+### Response ###
+
+**Format:** JSON
+
+**Sample data (success)**
+
+> {"authentication_token": "bUzD5uprpZoTDxa7E20v", "birthday": "1965-12-14T00:00:00Z", "country": "United States", "email": "cb@astros.com", "first_name": "Craig", "last_name": "biggio", "postal_code": "77054", "username": "cb"}
+
+**Sample data (failure)**
+
+> {"error": "Invalid login or password."}

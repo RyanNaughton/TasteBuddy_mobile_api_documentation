@@ -1,0 +1,17 @@
+# Restaurant #
+
+## Request ##
+
+**URL:** `http://example.com/restaurant/id`  
+**Format:** JSON  
+**Method:** GET  
+**Requires Authentication:** Optional  
+
+## Response ##
+
+If the user is not authenticated, the response will not include the `user_rating` parameter.  
+
+**Format:** JSON
+
+**Sample data:**
+See [restaurant documentation](https://github.com/ArgoNavisDev/mobile_api_documentation/blob/master/json_data/restaurant.mkd)  
